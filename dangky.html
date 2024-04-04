@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dang ky</title>
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- custom css file link -->
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+<section id="header">
+    <a href="index.html" class="logo"><i class="fa-solid fa-chair"></i>ThanhHai</a>
+    <div>
+        <ul id="navbar">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="shop.html">Sản phẩm</a></li>
+            <li><a href="#services">Dịch vụ</a></li>
+            <li><a href="#about">Thông tin</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
+            <li><a href="giohang.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <li><a class="active" href="dangnhap.html"><i class="fa-solid fa-user"></i></i></a></li>
+        </ul>
+    </div>
+</section>
+<section id="page-header">
+    <h2>Chương trình siêu khuyến mãi</h2>
+    <p>Mọi mặt hàng giảm đến 65%!</p>
+</section>
+<!-- Đăng kí -->
+<section id="register" class="section-p1">
+    <div class="register-box">
+        <div class="register-header">
+            <header>Sign up</header>
+        </div>
+        <div class="input-box">
+            <input type="text" class="input-field" placeholder="Họ" autocomplete="off" required>
+        </div>
+        <div class="input-box">
+            <input type="text" class="input-field" placeholder="Tên" autocomplete="off" required>
+        </div>
+        <div class="input-box">
+            <input type="date" class="input-field" placeholder="Ngày sinh" autocomplete="off" required>
+        </div>
+        <div class="input-box">
+            <input type="password" class="input-field" placeholder="Email" autocomplete="off" required>
+        </div>
+        <div class="input-box">
+            <input type="password" class="input-field" placeholder="Password" autocomplete="off" required>
+        </div>
+        <div class="input-box">
+            <input type="password" class="input-field" placeholder="Nhập lại password" autocomplete="off" required>
+            <div id="registerMessage" style="display: none;"></div>
+        <div class="forgot">
+            <section>
+                <input type="checkbox" id="check">
+                <label for="check">Chấp nhận chính sách</label>
+            </section>
+            <section>
+                <a href="#">Chính sách và điều lệ</a>
+            </section>
+        </div>
+        <div class="input-submit">
+            <button class="submit-btn" id="submit"></button>
+            <label for="submit">Sign Up</label>
+        </div>
+        <div class="sign-up-link">
+            <p>You have account? <a href="dangnhap.html">Login</a></p>
+        </div>
+    </div>
+
+</section>
+<footer class="section-p1">
+    <div class="col">
+        <a href="#" class="logo"><i class="fa-solid fa-chair"></i>ThanhHai</a>
+        <h4>Liên hệ</h4>
+        <p><b>Địa chỉ:</b> 624 Âu Cơ, Phường 10, Quận Tân Bình, TP.Hồ Chí Minh</p>
+        <p><b>Điện thoại:</b> 0337553199</p>
+        <p><b>Email:</b> hoanghai21082003@gmail.com</p>
+        <div class="follow">
+            <h4>Theo dõi chúng tôi tại:</h4>
+            <div class="icon">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <h4>Thông Tin</h4>
+        <a href="#">Về Chúng Tôi</a>
+        <a href="#">Chính Sách Bảo Mật</a>
+        <a href="#">Chính Sách Đổi Trả</a>
+        <a href="#">Chính Sách Vận Chuyển</a>
+        <a href="#">Hệ Thống Cửa Hàng</a>
+    </div>
+    <div class="col install">
+        <h4>Tải ứng dụng</h4>
+        <p>App Store hoặc Google Play</p>
+        <div class="row">
+            <a href="#"><img src="./img/pay/app.jpg" alt=""></a>
+            <a href="#"><img src="./img/pay/play.jpg" alt=""></a>
+    </div>
+    <p>Các hình thức thanh toán</p>
+    <img src="./img/pay/pay.png" alt="">
+    </div>
+    <div class="copyright">
+        <p>&copy; 2021 ThanhHai. All rights reserved.</p>
+    </div>
+</footer>
+<!-- custom js file link -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const firstNameInput = document.querySelector('input[placeholder="Họ"]');
+        const lastNameInput = document.querySelector('input[placeholder="Tên"]');
+        const dobInput = document.querySelector('input[placeholder="Ngày sinh"]');
+        const emailInput = document.querySelector('input[placeholder="Email"]');
+        const passwordInput = document.querySelector('input[placeholder="Password"]');
+        const confirmPasswordInput = document.querySelector('input[placeholder="Nhập lại password"]');
+        const termsCheckbox = document.getElementById('check');
+        const submitButton = document.getElementById('submit');
+        const registerMessage = document.getElementById('registerMessage');
+        
+        submitButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            const firstName = firstNameInput.value.trim();
+            const lastName = lastNameInput.value.trim();
+            const dob = dobInput.value.trim();
+            const email = emailInput.value.trim();
+            const password = passwordInput.value;
+const confirmPassword = confirmPasswordInput.value;
+            const termsAgreed = termsCheckbox.checked;
+
+            // Kiểm tra điều kiện đơn giản, bạn có thể thay đổi tùy theo yêu cầu của bạn
+            if (firstName === '' || lastName === '' || dob === '' || email === '@' || password === '' || confirmPassword === '' || !termsAgreed) {
+                registerMessage.textContent = 'Vui lòng điền đầy đủ thông tin và chấp nhận điều khoản.';
+                registerMessage.style.display = 'block';
+                return; // Dừng xử lý tiếp theo nếu có lỗi
+            }
+
+            if (password !== confirmPassword) {
+                registerMessage.textContent = 'Mật khẩu không khớp.';
+                registerMessage.style.display = 'block';
+                return; // Dừng xử lý tiếp theo nếu có lỗi
+            }
+            registerMessage.textContent = 'Đăng ký thành công!';
+            registerMessage.style.display = 'block';
+        });
+    });
+</script>
+</body>
+</html>
